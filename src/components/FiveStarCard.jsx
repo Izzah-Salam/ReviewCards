@@ -3,11 +3,12 @@ import Profile1 from "../assets/img/p1.jpg";
 import Profile2 from "../assets/img/p2.jpg";
 import Profile3 from "../assets/img/p3.jpg";
 import { IoStarSharp } from "react-icons/io5";
+import "../index.css";
 
 function FiveStarCard() {
   return (
-    <div className="bg-[#00b6de] lg:h-screen lg:w-screen h-full w-full">
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 p-20 justify-center items-center">
+    <div className="bg-[#00b6de] lg:h-screen lg:w-screen h-full w-full justify-center items-center">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 p-20 ">
         <div className="bg-white col-span-1 rounded-xl shadow-2xl p-5 sm:block">
           <div className="sm:flex sm:items-center block ">
             <img

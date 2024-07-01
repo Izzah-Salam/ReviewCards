@@ -1,3 +1,97 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.custom-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px; /* Make the range input thin */
+  background: #d1d5db; /* Tailwind's gray-300 for non-filled part */
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+}
+
+.custom-range::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  background: #d1d5db; /* Tailwind's gray-300 for non-filled part */
+  border-radius: 10px;
+}
+
+.custom-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #3b82f6; /* Tailwind's blue-500 for thumb */
+  border-radius: 50%;
+  margin-top: -6px; /* Center the thumb vertically */
+  cursor: pointer;
+}
+
+.custom-range::-moz-range-track {
+  width: 100%;
+  height: 4px;
+  background: #d1d5db; /* Tailwind's gray-300 for non-filled part */
+  border-radius: 10px;
+}
+
+.custom-range::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #3b82f6; /* Tailwind's blue-500 for thumb */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.custom-range::-ms-track {
+  width: 100%;
+  height: 4px;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+.custom-range::-ms-fill-lower {
+  background: #facc15; /* Tailwind's yellow-400 for filled part */
+  border-radius: 10px;
+}
+
+.custom-range::-ms-fill-upper {
+  background: #d1d5db; /* Tailwind's gray-300 for non-filled part */
+  border-radius: 10px;
+}
+
+.custom-range::-ms-thumb {
+  width: 16px;
+  height: 16px;
+  background: #3b82f6; /* Tailwind's blue-500 for thumb */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Apply the filled color for WebKit browsers */
+.custom-range:focus::-webkit-slider-runnable-track {
+  background: linear-gradient(
+    to right,
+    #facc15 0%,
+    #facc15 var(--value),
+    #d1d5db var(--value),
+    #d1d5db 100%
+  );
+}
+
+/* Update the track fill color */
+.custom-range::before {
+  content: "";
+  height: 4px;
+  background: #facc15; /* Tailwind's yellow-400 for filled part */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+  width: var(--value);
+}
